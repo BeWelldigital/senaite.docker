@@ -101,7 +101,7 @@ class Environment(object):
             return
 
         allow_origin = self.env.get("CORS_ALLOW_ORIGIN",
-            "http://localhost:3000,http://127.0.0.1:3000")
+            "*")
         allow_methods = self.env.get("CORS_ALLOW_METHODS",
             "DELETE,GET,OPTIONS,PATCH,POST,PUT")
         allow_credentials = self.env.get("CORS_ALLOW_CREDENTIALS", "true")
