@@ -59,6 +59,11 @@ VOLUME /data
 COPY docker-initialize.py docker-entrypoint.sh /
 RUN rm -f /home/senaite/buildout-cache/eggs/cp27mu/senaite.core-2.0.0-py2.7.egg/bika/lims/setupdata/test/test.xlsx
 COPY test.xlsx /home/senaite/buildout-cache/eggs/cp27mu/senaite.core-2.0.0-py2.7.egg/bika/lims/setupdata/test/
+
+# Update template file
+RUN rm -f /home/senaite/buildout-cache/eggs/cp27mu/senaite.impress-2.0.0-py2.7.egg/senaite/impress/templates/reports/Default.pt
+COPY Default.pt /home/senaite/buildout-cache/eggs/cp27mu/senaite.impress-2.0.0-py2.7.egg/senaite/impress/templates/reports/Default.pt
+
 # Expose instance port
 EXPOSE 8080
 
