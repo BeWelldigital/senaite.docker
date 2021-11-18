@@ -235,7 +235,7 @@ ch python:float(content_height);
                     <tr>
 
                         <td>
-                           <div class='fl'> Sample Id : </div> <div class='font-weight-bold' tal:content="model/getId" tal:attributes="href model/absolute_url;" class='font-weight-bold'></div>
+                           <div class='fl'> Sample Id : </div> <div class='font-weight-bold float-right' tal:content="model/getId" tal:attributes="href model/absolute_url;" class='font-weight-bold'></div>
                         </td>
                         <td>
                            <div class="text-center float-right barcode-container">
@@ -251,19 +251,19 @@ ch python:float(content_height);
 
                     </tr>
                     <tr>
-                        <td > <div class='fl'>Patient Info :</div> <div tal:replace="client/Name|nothing"  class='font-weight-bold text-uppercase'></div>
+                        <td > <div class='fl'>Patient Info :</div> <div tal:replace="client/Name|nothing"  class='font-weight-bold text-uppercase float-right'></div>
                         <td >
-                           <div class='fl'>Sample Received Date : </div> <div tal:content="python:view.to_localized_time(model.DateReceived)"></div>
+                           <div class='fl'>Sample Received Date : </div> <div tal:content="python:view.to_localized_time(model.DateReceived)" class='float-right'></div>
                         </td>
 
                     </tr>
                     <tr>
 
                         <td>
-                           <div class='fl'> IP/OP # - Department : </div> <div tal:replace="contact/Fullname|nothing" class='font-weight-bold text-uppercase'></div>
+                           <div class='fl'> IP/OP # - Department : </div> <div tal:replace="contact/Fullname|nothing" class='font-weight-bold text-uppercase float-right'></div>
                         </td>
                         <td class='font-weight-bold'>
-                             <div class='fl'> Report Date Published : </div> <div tal:content="python:view.to_localized_time(view.timestamp)"></div>
+                             <div class='fl'> Report Date Published : </div> <div class='float-right' tal:content="python:view.to_localized_time(view.timestamp)"></div>
                         </td>
 
                     </tr>
@@ -273,7 +273,7 @@ ch python:float(content_height);
             <!-- Clear Floats
          https://github.com/Kozea/WeasyPrint/issues/36
     -->
-            <div class="clearfix"></div>
+            <!-- <div class="clearfix"></div> -->
         </div>
     </tal:render>
 
