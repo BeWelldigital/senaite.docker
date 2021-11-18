@@ -259,9 +259,9 @@ ch python:float(content_height);
 
                     </tr>
                     <tr>
-                        <td class='font-weight-bold text-uppercase'> <div class='fl'>Patient Info :</div> <div tal:replace="client/Name|nothing" ></div>
+                        <td class='font-weight-bold text-uppercase'> <div class='fl'>Patient Info</div> : <div tal:replace="client/Name|nothing" ></div>
                         <td class='font-weight-bold text-uppercase'>
-                           <div class='fl'>Received Date : </div> <div tal:content="python:view.to_localized_time(model.DateReceived)" ></div>
+                           <div class='fl'>Received Date</div> <div class="fl">:</div> <div tal:content="python:view.to_localized_time(model.DateReceived)" ></div>
                         </td>
 
                     </tr>
@@ -271,7 +271,7 @@ ch python:float(content_height);
                           <div tal:replace="contact/Fullname|nothing"></div>
                         </td>
                         <td class='font-weight-bold text-uppercase'>
-                             <div class='fl'>Date Published : </div> <div class='float-right' tal:content="python:view.to_localized_time(view.timestamp)"></div>
+                             <div class='fl'>Date Published  </div> <div class="fl">:</div> <div tal:content="python:view.to_localized_time(view.timestamp)"></div>
                         </td>
 
                     </tr>
