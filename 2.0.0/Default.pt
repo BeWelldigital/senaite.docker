@@ -224,13 +224,13 @@ ch python:float(content_height);
                             Sample Id :
                         </td>
                         <td>
-                            <div tal:content="model/getId" tal:attributes="href model/absolute_url;">
-                                <div class="text-center float-right barcode-container">
-                                    <div class="barcode" data-code="code128" data-showHRI="true" data-barHeight="15"
-                                        data-addQuietZone="true">
-                                    </div>
-
+                            <div tal:content="model/getId" tal:attributes="href model/absolute_url;"></div>
+                            <div class="text-center float-right barcode-container">
+                                <div class="barcode" data-code="code128" data-showHRI="true" data-barHeight="15"
+                                    data-addQuietZone="true">
                                 </div>
+
+                            </div>
                         </td>
 
                     </tr>
@@ -240,7 +240,7 @@ ch python:float(content_height);
                         <td>
                             <div tal:replace="client/Name|nothing"></div>
 
-                            <div class='float-right' tal:replace="client/Phone|nothing"></div>
+                            <!-- <div class='float-right' tal:replace="client/Phone|nothing"></div> -->
                         </td>
 
                     </tr>
