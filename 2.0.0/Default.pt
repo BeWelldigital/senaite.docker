@@ -162,6 +162,14 @@
                 border-top: 1px solid black;
             }
 
+            .summary-table>tr {
+                border: none;
+            }
+
+            .summary-table {
+                border: 1px solid black;
+            }
+
 
 
             <tal:block condition="python:content_width and content_height"><tal:block condition="python:all([content_width, content_height])"
@@ -201,7 +209,7 @@ ch python:float(content_height);
         <div class="row section-info no-gutters">
             <div class="w-100">
                 <!-- Client Info -->
-                <table class="table table-sm table-condensed w-100">
+                <table class="table table-sm table-condensed w-100 summary-table">
                     <!-- <colgroup>
           
           <col style="width: 40%;">
@@ -217,15 +225,12 @@ ch python:float(content_height);
                         </td>
                         <td>
                             <div tal:content="model/getId" tal:attributes="href model/absolute_url;">
-
-                                <div style='float:right'>
-
-                                    <div class="text-center float-right barcode-container">
-                                        <div class="barcode" data-code="code128" data-showHRI="true" data-barHeight="15"
-                                            data-addQuietZone="true" tal:attributes="data-id model/getId">
-                                        </div>
-
+                                <div class="text-center float-right barcode-container">
+                                    <div class="barcode" data-code="code128" data-showHRI="true" data-barHeight="15"
+                                        data-addQuietZone="true">
                                     </div>
+
+                                </div>
                         </td>
 
                     </tr>
@@ -285,31 +290,31 @@ ch python:float(content_height);
                         <a tal:attributes="href child/absolute_url" tal:content="child/getId"></a>
                     </tal:invalidreport>
                 </div>
-                <div class="alert alert-info" tal:condition="model/is_provisional">
+                <!-- <div class="alert alert-info" tal:condition="model/is_provisional">
                     <div i18n:translate="">Provisional report</div>
-                </div>
+                </div> -->
             </div>
         </div>
     </tal:render>
 
     <!-- SUMMARY -->
-    <tal:render condition="python:True" define="client model/Client;
+    <!-- <tal:render condition="python:True" define="client model/Client;
                       batch model/Batch;
                       reporter python:view.current_user;
                       specification model/Specification;
                       publication_specification model/PublicationSpecification;
                       spec python:publication_specification or specification;">
-        <div class="row section-summary no-gutters">
-            <div class="w-100">
+        <div class="row section-summary no-gutters"> -->
+    <!-- <div class="w-100"> -->
 
-                <!-- Barcode -->
-                <div class="text-center float-right barcode-container">
+    <!-- Barcode -->
+    <!-- <div class="text-center float-right barcode-container">
                     <div class="barcode" data-code="code128" data-showHRI="true" data-barHeight="15"
                         data-addQuietZone="true" tal:attributes="data-id model/getId">
                     </div>
-                </div>
+                </div> -->
 
-                <!-- <h1 i18n:translate="">Summary</h1>
+    <!-- <h1 i18n:translate="">Summary</h1>
         <table class="table table-sm table-condensed">
           <tr>
             <td style="width:20%" class="label" i18n:translate="">Sample ID</td>
@@ -378,8 +383,8 @@ ch python:float(content_height);
             <td tal:content="structure python:', '.join(batch.BatchLabels)"></td>
           </tr>
         </table> -->
-            </div>
-        </div>
+    <!-- </div> -->
+    <!-- </div> -->
     </tal:render>
 
     <!-- RESULTS -->
@@ -612,16 +617,16 @@ ch python:float(content_height);
                       contact model/Contact">
         <!-- <div class="row section-discreeter no-gutters">
             <div class="w-100 text-muted font-weight-light small"> -->
-                <!-- <div class="discreeter-outofrange">
+        <!-- <div class="discreeter-outofrange">
                     <span class="outofrange text-danger" style="font-family:Lucida Console, Courier, monospace;"
                         tal:content="outofrange_symbol">
                     </span>
                     <span i18n:translate="">Result out of client specified range.</span>
                 </div> -->
-                <!-- <div class="discreeter-not-invoiced" tal:condition="model/InvoiceExclude" i18n:translate="">
+        <!-- <div class="discreeter-not-invoiced" tal:condition="model/InvoiceExclude" i18n:translate="">
                     Not invoiced
                 </div> -->
-                <!-- <div class="discreeter-methods" tal:condition="laboratory/LaboratoryAccredited">
+        <!-- <div class="discreeter-methods" tal:condition="laboratory/LaboratoryAccredited">
                     <span class="accredited-symbol text-success"
                         style="font-family: Lucida Console, Courier, monospace;" tal:content="accredited_symbol">
                     </span>
@@ -632,7 +637,7 @@ ch python:float(content_height);
                         accredited
                     </span>
                 </div> -->
-                <!-- <div class="discreeter-disclaimer" i18n:translate="">
+        <!-- <div class="discreeter-disclaimer" i18n:translate="">
                     Analysis results relate only to the samples tested.
                 </div>
                 <div class="discreeter-copyright" i18n:translate="">
@@ -644,7 +649,7 @@ ch python:float(content_height);
                     Test results are at a
                     <tal:block replace="confidence_level" i18n:name="lab_confidence" />% confidence level
                 </div> -->
-            <!-- </div>
+        <!-- </div>
         </div> -->
     </tal:render>
 
