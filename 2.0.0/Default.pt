@@ -221,7 +221,7 @@ ch python:float(content_height);
                     <tr>
 
                         <td>
-                            Sample Id
+                            Sample Id :
                         </td>
                         <td>
                             <div tal:content="model/getId" tal:attributes="href model/absolute_url;">
@@ -231,6 +231,16 @@ ch python:float(content_height);
                                     </div>
 
                                 </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>Patient Name / Gender / Age :
+                        <td>
+                        <td>
+                            <div tal:replace="client/Name|nothing"></div>
+
+                            <div class='float-right' tal:replace="client/Phone|nothing"></div>
                         </td>
 
                     </tr>
