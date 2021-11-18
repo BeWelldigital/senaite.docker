@@ -259,9 +259,9 @@ ch python:float(content_height);
 
                     </tr>
                     <tr>
-                        <td class='font-weight-bold text-uppercase'> <div class='fl'>Patient Info :</div> <div tal:replace="client/Name|nothing" class='float-right'></div>
+                        <td class='font-weight-bold text-uppercase'> <div class='fl'>Patient Info :</div> <div tal:replace="client/Name|nothing" ></div>
                         <td class='font-weight-bold text-uppercase'>
-                           <div class='fl'>Received Date : </div> <div tal:content="python:view.to_localized_time(model.DateReceived)" class='float-right'></div>
+                           <div class='fl'>Received Date : </div> <div tal:content="python:view.to_localized_time(model.DateReceived)" ></div>
                         </td>
 
                     </tr>
