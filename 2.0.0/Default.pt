@@ -182,6 +182,12 @@
 
             .fl {
               float: left;
+              width: 50%;
+              font-weight: bold;
+            }
+
+            .font-weight-bold {
+              font-weight: bold;
             }
 
 
@@ -219,6 +225,7 @@ ch python:float(content_height);
     <!-- /HEADER -->
 
     <!-- INFO -->
+    <div style='margin-top: 2cm'></div>
     <tal:render condition="python:True">
         <div class="row section-info no-gutters">
             <div class="w-100">
@@ -234,7 +241,7 @@ ch python:float(content_height);
         </colgroup> -->
                     <tr>
 
-                        <td>
+                        <td class='font-weight-bold text-uppercase'>
                            <div class='fl'> Sample Id : </div> <div class='font-weight-bold float-right' tal:content="model/getId" tal:attributes="href model/absolute_url;" class='font-weight-bold'></div>
                         </td>
                         <td>
@@ -242,28 +249,28 @@ ch python:float(content_height);
                             <div class="barcode"
                                 data-code="code128"
                                 data-showHRI="true"
-                                data-barHeight="15"
+                                data-barHeight="13"
                                 data-addQuietZone="true"
-                                tal:attributes="data-id model/getId">
+                            >
                             </div>
                           </div>
                         </td>
 
                     </tr>
                     <tr>
-                        <td > <div class='fl'>Patient Info :</div> <div tal:replace="client/Name|nothing"  class='font-weight-bold text-uppercase float-right'></div>
-                        <td >
-                           <div class='fl'>Sample Received Date : </div> <div tal:content="python:view.to_localized_time(model.DateReceived)" class='float-right'></div>
+                        <td class='font-weight-bold text-uppercase'> <div class='fl'>Patient Info :</div> <div tal:replace="client/Name|nothing" class='float-right'></div>
+                        <td class='font-weight-bold text-uppercase'>
+                           <div class='fl'>Received Date : </div> <div tal:content="python:view.to_localized_time(model.DateReceived)" class='float-right'></div>
                         </td>
 
                     </tr>
                     <tr>
 
-                        <td>
-                           <div class='fl'> IP/OP # - Department : </div> <div tal:replace="contact/Fullname|nothing" class='font-weight-bold text-uppercase float-right'></div>
+                        <td  class='font-weight-bold text-uppercase'>
+                           <div class='fl'> IP/OP # - Department : </div> <div tal:replace="contact/Fullname|nothing"></div>
                         </td>
-                        <td class='font-weight-bold'>
-                             <div class='fl'> Report Date Published : </div> <div class='float-right' tal:content="python:view.to_localized_time(view.timestamp)"></div>
+                        <td class='font-weight-bold text-uppercase'>
+                             <div class='fl'>Date Published : </div> <div class='float-right' tal:content="python:view.to_localized_time(view.timestamp)"></div>
                         </td>
 
                     </tr>
