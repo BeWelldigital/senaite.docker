@@ -182,7 +182,7 @@
 
             .fl {
               float: left;
-              width: 50%;
+              <!-- width: 50%; -->
               font-weight: bold;
             }
 
@@ -226,7 +226,7 @@ ch python:float(content_height);
 
     <!-- INFO -->
     <tal:render condition="python:True">
-    <div style='margin-top: 2.5cm'></div>
+    <div style='margin-top: 3cm'></div>
         <div class="row section-info no-gutters">
             <div class="w-100">
                 <!-- Client Info -->
@@ -242,7 +242,7 @@ ch python:float(content_height);
                     <tr>
 
                         <td class='font-weight-bold text-uppercase'>
-                           <div class='fl'> Sample Id : </div> <div tal:content="model/getId" tal:attributes="href model/absolute_url;" class='font-weight-bold'></div>
+                          <div tal:content="model/getId" tal:attributes="href model/absolute_url;" class='font-weight-bold'></div>
                         </td>
                         <td>
                            <div class="text-center float-right barcode-container">
@@ -268,7 +268,7 @@ ch python:float(content_height);
                     <tr>
 
                         <td  class='font-weight-bold text-uppercase'>
-                           <div class='fl'> IP/OP # - Department : </div> <div tal:replace="contact/Fullname|nothing"></div>
+                          <div tal:replace="contact/Fullname|nothing"></div>
                         </td>
                         <td class='font-weight-bold text-uppercase'>
                              <div class='fl'>Date Published : </div> <div class='float-right' tal:content="python:view.to_localized_time(view.timestamp)"></div>
