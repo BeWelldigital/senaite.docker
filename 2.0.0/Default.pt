@@ -163,11 +163,20 @@
             }
 
             .summary-table>tr {
-                border: none;
+                border: none!important;
             }
 
+             .summary-table>tr>td {
+                border: none!important;
+              }
+
+            .summary-table>tr>td:first-child { width : 40% }
             .summary-table {
                 border: 1px solid black;
+            }
+
+            .text-uppercase {
+              text-transform: uppercase;
             }
 
 
@@ -223,22 +232,25 @@ ch python:float(content_height);
                         <td>
                             Sample Id :
                         </td>
-                        <td>
-                            <div tal:content="model/getId" tal:attributes="href model/absolute_url;"></div>
-                            <div class="text-center float-right barcode-container">
-                                <div class="barcode" data-code="code128" data-showHRI="true" data-barHeight="15"
-                                    data-addQuietZone="true">
-                                </div>
-
+                        <td class='font-weight-bold'>
+                            <div tal:content="model/getId" tal:attributes="href model/absolute_url;" class='font-weight-bold'></div>
+                           <div class="text-center float-right barcode-container">
+                            <div class="barcode"
+                                data-code="code128"
+                                data-showHRI="true"
+                                data-barHeight="15"
+                                data-addQuietZone="true"
+                                tal:attributes="data-id model/getId">
                             </div>
+                          </div>
                         </td>
 
                     </tr>
                     <tr>
                         <td>Patient Name / Gender / Age :
                         <td>
-                        <td>
-                            <div tal:replace="client/Name|nothing"></div>
+                        <td >
+                            <div tal:replace="client/Name|nothing"  class='font-weight-bold text-uppercase'></div>
 
                             <!-- <div class='float-right' tal:replace="client/Phone|nothing"></div> -->
                         </td>
@@ -249,8 +261,8 @@ ch python:float(content_height);
                         <td>
                             IP/OP # - Department :
                         </td>
-                        <td>
-                            <div tal:replace="contact/Fullname|nothing"></div>
+                        <td class='font-weight-bold'>
+                            <div tal:replace="contact/Fullname|nothing" class='font-weight-bold text-uppercase'></div>
                         </td>
 
                     </tr>
@@ -261,7 +273,7 @@ ch python:float(content_height);
                             Sample Received Date :
 
                         </td>
-                        <td>
+                        <td class='font-weight-bold'>
                             <div tal:content="python:view.to_localized_time(model.DateReceived)"></div>
                         </td>
 
@@ -273,7 +285,7 @@ ch python:float(content_height);
                             Report Date Published :
 
                         </td>
-                        <td>
+                        <td class='font-weight-bold'>
                             <div tal:content="python:view.to_localized_time(view.timestamp)"></div>
                         </td>
 
