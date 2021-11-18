@@ -225,8 +225,8 @@ ch python:float(content_height);
     <!-- /HEADER -->
 
     <!-- INFO -->
-    <div style='margin-top: 2cm'></div>
     <tal:render condition="python:True">
+    <div style='margin-top: 2.5cm'></div>
         <div class="row section-info no-gutters">
             <div class="w-100">
                 <!-- Client Info -->
@@ -242,7 +242,7 @@ ch python:float(content_height);
                     <tr>
 
                         <td class='font-weight-bold text-uppercase'>
-                           <div class='fl'> Sample Id : </div> <div class='font-weight-bold float-right' tal:content="model/getId" tal:attributes="href model/absolute_url;" class='font-weight-bold'></div>
+                           <div class='fl'> Sample Id : </div> <div tal:content="model/getId" tal:attributes="href model/absolute_url;" class='font-weight-bold'></div>
                         </td>
                         <td>
                            <div class="text-center float-right barcode-container">
@@ -251,6 +251,7 @@ ch python:float(content_height);
                                 data-showHRI="true"
                                 data-barHeight="13"
                                 data-addQuietZone="true"
+                                tal:attributes="data-id model/getId"
                             >
                             </div>
                           </div>
