@@ -64,6 +64,13 @@ COPY test.xlsx /home/senaite/buildout-cache/eggs/cp27mu/senaite.core-2.0.0-py2.7
 RUN rm -f /home/senaite/buildout-cache/eggs/cp27mu/senaite.impress-2.0.0-py2.7.egg/senaite/impress/templates/reports/Default.pt
 COPY Default.pt /home/senaite/buildout-cache/eggs/cp27mu/senaite.impress-2.0.0-py2.7.egg/senaite/impress/templates/reports/Default.pt
 
+#update barcode
+# RUN rm -f /home/senaite/buildout-cache/eggs/cp27mu/senaite.core-2.0.0-py2.7.egg/bika/lims/browser/templates/stickers/DIN_Address_40x85mm.css
+# RUN rm -f /home/senaite/buildout-cache/eggs/cp27mu/senaite.core-2.0.0-py2.7.egg/bika/lims/browser/templates/stickers/DIN_Address_40x85mm.pt
+# COPY DIN_Address_40x85mm.pt /home/senaite/buildout-cache/eggs/cp27mu/senaite.core-2.0.0-py2.7.egg/bika/lims/browser/templates/stickers/DIN_Address_40x85mm.pt
+# COPY DIN_Address_40x85mm.css /home/senaite/buildout-cache/eggs/cp27mu/senaite.core-2.0.0-py2.7.egg/bika/lims/browser/templates/stickers/DIN_Address_40x85mm.pt
+
+# COPY  /home/senaite/buildout-cache/eggs/cp27mu/senaite.core-2.0.0-py2.7.egg/bika/lims/browser/templates/stickers
 # Expose instance port
 EXPOSE 8080
 

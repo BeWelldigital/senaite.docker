@@ -1,0 +1,23 @@
+<tal:sticker define="item python:view.current_item;
+                     contact item/Contact;
+                     client item/getClient;
+                     print_address client/getPrintAddress|nothing">
+
+<div class="contact-info">
+    <div tal:content="contact/Salutation|nothing"/>
+    <div tal:content="contact/Fullname|nothing"/>
+    <div tal:content="contact/Lastname|nothing"/>
+</div>
+<div class="client-info">
+  <strong tal:content="client/Name"/>
+</div>
+<!-- <div class="barcode"
+    tal:attributes="data-id sample_id;"
+    data-code="code93"
+    data-barHeight="10"
+    data-addQuietZone="true"
+    data-showHRI="false">
+  </div> -->
+ 
+
+</tal:sticker>
