@@ -62,8 +62,8 @@ COPY test.xlsx /home/senaite/buildout-cache/eggs/cp27mu/senaite.core-2.0.0-py2.7
 
 # Update template file
 RUN rm -f /home/senaite/buildout-cache/eggs/cp27mu/senaite.impress-2.0.0-py2.7.egg/senaite/impress/templates/reports/MultiDefault.pt
-RUN rm -f /home/senaite/buildout-cache/eggs/cp27mu/senaite.impress-2.0.0-py2.7.egg/senaite/impress/templates/reports/MultiDefaultByColumn.pt
-RUN rm -f /home/senaite/buildout-cache/eggs/cp27mu/senaite.impress-2.0.0-py2.7.egg/senaite/impress/templates/reports/Default.pt
+# RUN rm -f /home/senaite/buildout-cache/eggs/cp27mu/senaite.impress-2.0.0-py2.7.egg/senaite/impress/templates/reports/MultiDefaultByColumn.pt
+# RUN rm -f /home/senaite/buildout-cache/eggs/cp27mu/senaite.impress-2.0.0-py2.7.egg/senaite/impress/templates/reports/Default.pt
 COPY Default.pt /home/senaite/buildout-cache/eggs/cp27mu/senaite.impress-2.0.0-py2.7.egg/senaite/impress/templates/reports/Default.pt
 
 #update barcode
