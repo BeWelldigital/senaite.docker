@@ -6,7 +6,7 @@ START="console start restart"
 
 # Fixing permissions for external /data volumes
 mkdir -p /data/blobstorage /data/cache /data/filestorage /data/instance /data/log /data/zeoserver
-mkdir -p /home/senaite/senaitelims/src
+mkdir -p /home/senaite/senaite.patient/src
 find /data  -not -user senaite -exec chown senaite:senaite {} \+
 find /home/senaite -not -user senaite -exec chown senaite:senaite {} \+
 
@@ -22,20 +22,22 @@ if [ -e "custom.cfg" ]; then
   fi
 fi
 
-# ZEO Server
-if [[ "$1" == "zeo"* ]]; then
-  exec gosu senaite bin/$1 fg
-fi
+exec gosu senaite bin/instance fg
 
-# Instance start
-if [[ $START == *"$1"* ]]; then
-  exec gosu senaite bin/instance console
-fi
+# # ZEO Server
+# if [[ "$1" == "zeo"* ]]; then
+#   exec gosu senaite bin/$1 fg
+# fi
 
-# Instance helpers
-if [[ $COMMANDS == *"$1"* ]]; then
-  exec gosu senaite bin/instance "$@"
-fi
+# # Instance start
+# if [[ $START == *"$1"* ]]; then
+#   exec gosu senaite bin/instance console
+# fi
+
+# # Instance helpers
+# if [[ $COMMANDS == *"$1"* ]]; then
+#   exec gosu senaite bin/instance "$@"
+# fi
 
 # Custom
 exec "$@"

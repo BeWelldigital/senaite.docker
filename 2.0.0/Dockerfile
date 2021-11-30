@@ -13,7 +13,7 @@ ENV PLONE_MAJOR=5.2 \
     PLONE_UNIFIED_INSTALLER=Plone-5.2.4-UnifiedInstaller-1.0 \
     SENAITE_HOME=/home/senaite \
     SENAITE_USER=senaite \
-    SENAITE_INSTANCE_HOME=/home/senaite/senaitelims \
+    SENAITE_INSTANCE_HOME=/home/senaite/senaite.patient \
     SENAITE_DATA=/data \
     SENAITE_FILESTORAGE=/data/filestorage \
     SENAITE_BLOBSTORAGE=/data/blobstorage
@@ -30,6 +30,7 @@ COPY packages.txt /
 # Install package dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends $(grep -vE "^\s*#" /packages.txt  | tr "\n" " ")
 
+COPY senaite.patient $SENAITE_INSTANCE_HOME
 # Fetch unified installer
 RUN wget -O Plone.tgz https://launchpad.net/plone/$PLONE_MAJOR/$PLONE_VERSION/+download/$PLONE_UNIFIED_INSTALLER.tgz \
     && echo "$PLONE_MD5 Plone.tgz" | md5sum -c - \

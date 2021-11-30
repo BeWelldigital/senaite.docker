@@ -9,11 +9,11 @@ class Environment(object):
     """
     def __init__(
             self, env=os.environ,
-            zope_conf="/home/senaite/senaitelims/parts/instance/etc/zope.conf",
-            custom_conf="/home/senaite/senaitelims/custom.cfg",
-            zeopack_conf="/home/senaite/senaitelims/bin/zeopack",
-            zeoserver_conf="/home/senaite/senaitelims/parts/zeoserver/etc/zeo.conf",
-            cors_conf="/home/senaite/senaitelims/parts/instance/etc/package-includes/999-additional-overrides.zcml"
+            zope_conf="/home/senaite/senaite.patient/parts/instance/etc/zope.conf",
+            custom_conf="/home/senaite/senaite.patient/custom.cfg",
+            zeopack_conf="/home/senaite/senaite.patient/bin/zeopack",
+            zeoserver_conf="/home/senaite/senaite.patient/parts/zeoserver/etc/zeo.conf",
+            cors_conf="/home/senaite/senaite.patient/parts/instance/etc/package-includes/999-additional-overrides.zcml"
     ):
         self.env = env
         self.zope_conf = zope_conf
@@ -202,7 +202,7 @@ ZEO_TEMPLATE = """
       server {zeo_address}
       storage {zeo_storage}
       name zeostorage
-      var /home/senaite/senaitelims/parts/instance/var
+      var /home/senaite/senaite.patient/parts/instance/var
       cache-size {zeo_client_cache_size}
     </zeoclient>
 """.strip()
